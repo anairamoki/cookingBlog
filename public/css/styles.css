@@ -1,0 +1,13 @@
+:root { /* reset the font*/
+  --bs-font-sans-serif: 'Ruik' sans-serif;
+} 
+
+/* .container-xxl{ max-width: 1530px;} - set container little bigger */
+
+body {
+  background-image: url("/img/i-like-food.svg");
+  background-color: rgb(243, 243, 243);
+}
+
+/* reset anchor links color */
+a { color: var(--bs-dark);}
