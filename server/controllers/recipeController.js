@@ -1,3 +1,3 @@
 exports.homepage = async(req, res) => {
-  res.render('index', {title: 'Homepage'});
+  res.render('index', {title: 'My Celiac Husband - Home'});
 }
