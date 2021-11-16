@@ -1,7 +1,9 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
-
 const app = express();
+
+const CategorySchema = require('./server/models/CategorySchema');
 const port = process.env.PORT || 3000;
 
 require('dotenv').config();
