@@ -15,3 +15,4 @@ db.once("open", () => {
 
 // Models
 require('./CategorySchema');
+require('./RecipeSchema');

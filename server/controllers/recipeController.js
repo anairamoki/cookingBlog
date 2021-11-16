@@ -1,5 +1,7 @@
 require('../models/database');
 const Category = require('../models/CategorySchema');
+const Recipe = require('../models/RecipeSchema');
+
 
 
 
@@ -27,6 +29,42 @@ exports.exploreCategories = async(req, res) => {
     res.status(500).send({message: error.message || "Oops, something went wrong!"});
   }
 }
+
+// insert Dummy data 
+async function insertRecipeData(){
+  try {
+    await Recipe.insertMany([
+            { 
+              "name": "Recipe Name Goes Here",
+              "description": `Recipe Description Goes Here`,
+              "email": "recipeemail@raddy.co.uk",
+              "ingredients": [
+                "1 level teaspoon baking powder",
+                "1 level teaspoon cayenne pepper",
+                "1 level teaspoon hot smoked paprika",
+              ],
+              "category": "American", 
+              "image": "southern-friend-chicken.jpg"
+            },
+            { 
+              "name": "Recipe Name Goes Here",
+              "description": `Recipe Description Goes Here`,
+              "email": "recipeemail@raddy.co.uk",
+              "ingredients": [
+                "1 level teaspoon baking powder",
+                "1 level teaspoon cayenne pepper",
+                "1 level teaspoon hot smoked paprika",
+              ],
+              "category": "American", 
+              "image": "southern-friend-chicken.jpg"
+            },
+          ]);
+  } catch (error) {
+    console.log('err', + error)
+  }
+}
+
+insertRecipeData();
 
 
 
