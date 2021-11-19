@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // connecting to mongoose
-mongoose.connect('mongodb://localhost:27017/cookingBlog'), {
+mongoose.connect('mongodb://localhost:27017/Recipes'), {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 } 

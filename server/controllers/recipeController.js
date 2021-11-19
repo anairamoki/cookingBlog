@@ -3,8 +3,6 @@ const Category = require('../models/CategorySchema');
 const Recipe = require('../models/RecipeSchema');
 
 
-
-
 // Get homepage
 exports.homepage = async(req, res) => {
   //* inserting data into cookingBlog DB from front page
@@ -30,41 +28,8 @@ exports.exploreCategories = async(req, res) => {
   }
 }
 
-// insert Dummy data 
-async function insertRecipeData(){
-  try {
-    await Recipe.insertMany([
-            { 
-              "name": "Recipe Name Goes Here",
-              "description": `Recipe Description Goes Here`,
-              "email": "recipeemail@raddy.co.uk",
-              "ingredients": [
-                "1 level teaspoon baking powder",
-                "1 level teaspoon cayenne pepper",
-                "1 level teaspoon hot smoked paprika",
-              ],
-              "category": "American", 
-              "image": "southern-friend-chicken.jpg"
-            },
-            { 
-              "name": "Recipe Name Goes Here",
-              "description": `Recipe Description Goes Here`,
-              "email": "recipeemail@raddy.co.uk",
-              "ingredients": [
-                "1 level teaspoon baking powder",
-                "1 level teaspoon cayenne pepper",
-                "1 level teaspoon hot smoked paprika",
-              ],
-              "category": "American", 
-              "image": "southern-friend-chicken.jpg"
-            },
-          ]);
-  } catch (error) {
-    console.log('err', + error)
-  }
-}
 
-insertRecipeData();
+
 
 
 
