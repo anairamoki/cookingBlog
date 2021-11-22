@@ -9,7 +9,11 @@ exports.homepage = async(req, res) => {
   try {
     const limitNumber = 5;
     const categories = await Category.find({}).limit(limitNumber);
-    res.render('index', {title: 'My Celiac Husband - Home', categories});
+    const latest = await Recipe.find({}).sort({_id: -1}).limit(limitNumber); // grab the latest recipe
+
+    const food = {latest}; 
+    // pass the food object that contains latest object.
+    res.render('index', {title: 'My Celiac Husband - Home', categories, food});
   }catch (error) {
     res.status(500).send({message: error.message || "Oops, something went wrong!"});
   }
@@ -27,11 +31,4 @@ exports.exploreCategories = async(req, res) => {
     res.status(500).send({message: error.message || "Oops, something went wrong!"});
   }
 }
-
-
-
-
-
-
-
 
